@@ -1,16 +1,39 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
 <title>英語単熟語2016</title>
-<meta name="theme-color" content="#0c766e" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content="単熟語2016" />
-<link rel="stylesheet" href="./assets/app.css" />
+<meta name="description" content="英語単熟語2016の単語・熟語学習アプリ。1680語・例文付き。進捗管理・マイ単語・テスト機能あり。"/>
+<meta name="theme-color" content="#0c766e"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://002100k6021-7m35-bit.github.io/eigo-tankjukugo-2016/"/>
 </head>
 <body>
 <div id="root"></div>
-<script src="./assets/app.js"></script>
+<div id="loading" style="font-family:sans-serif;padding:2rem;text-align:center;color:#666">読み込み中…</div>
+<script>
+(async function(){
+  try {
+    let css = '';
+    for (const f of ['c0.css','c1.css']) {
+      css += await (await fetch('./assets/'+f)).text();
+    }
+    const st = document.createElement('style');
+    st.textContent = css;
+    document.head.appendChild(st);
+    let code = '';
+    for (let i=0;i<12;i++) {
+      code += await (await fetch('./assets/j'+i+'.js')).text();
+    }
+    document.getElementById('loading').remove();
+    const s = document.createElement('script');
+    s.textContent = code;
+    document.body.appendChild(s);
+  } catch(e) {
+    document.getElementById('loading').textContent = '読み込みエラー: '+e.message;
+  }
+})();
+</script>
 </body>
 </html>

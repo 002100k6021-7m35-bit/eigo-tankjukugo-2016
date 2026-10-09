@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://002100k6021-7m35-bit.github.io/eigo-tankjukugo-2016/sitemap.xml
