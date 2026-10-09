@@ -16,16 +16,12 @@
 (async function(){
   try {
     let css = '';
-    for (const f of ['c0.css','c1.css']) {
-      css += await (await fetch('./assets/'+f)).text();
-    }
+    for (let i=0;i<5;i++) css += await (await fetch('./assets/c'+i+'.css')).text();
     const st = document.createElement('style');
     st.textContent = css;
     document.head.appendChild(st);
     let code = '';
-    for (let i=0;i<12;i++) {
-      code += await (await fetch('./assets/j'+i+'.js')).text();
-    }
+    for (let i=0;i<30;i++) code += await (await fetch('./assets/j'+i+'.js')).text();
     document.getElementById('loading').remove();
     const s = document.createElement('script');
     s.textContent = code;
