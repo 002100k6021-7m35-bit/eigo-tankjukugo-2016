@@ -4,6 +4,4 @@
 
 **公開URL:** https://002100k6021-7m35-bit.github.io/eigo-tankjukugo-2016/
 
-- 単語 1680語 / 熟語 336語
-- 進捗管理・マイ単語・テスト機能
-- すべてブラウザ内で動作
+GitHub Pages を有効にする: Settings → Pages → Deploy from a branch → main / (root)

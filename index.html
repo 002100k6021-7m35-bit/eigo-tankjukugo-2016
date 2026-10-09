@@ -16,12 +16,12 @@
 (async function(){
   try {
     let css = '';
-    for (let i=0;i<5;i++) css += await (await fetch('./assets/c'+i+'.css')).text();
+    for (let i=0;i<6;i++) css += await (await fetch('./assets/c'+i+'.css')).text();
     const st = document.createElement('style');
     st.textContent = css;
     document.head.appendChild(st);
     let code = '';
-    for (let i=0;i<30;i++) code += await (await fetch('./assets/j'+i+'.js')).text();
+    for (let i=0;i<35;i++) code += await (await fetch('./assets/j'+i+'.js')).text();
     document.getElementById('loading').remove();
     const s = document.createElement('script');
     s.textContent = code;
